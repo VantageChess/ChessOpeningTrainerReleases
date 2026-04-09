@@ -177,14 +177,10 @@ a {
 .brand-mark {
   width: 34px;
   height: 34px;
-  display: grid;
-  place-items: center;
-  border-radius: 12px;
-  color: #ffffff;
-  background: linear-gradient(135deg, var(--brand-blue), var(--brand-pink));
+  border-radius: 0;
   box-shadow: var(--shadow-brand);
-  font-family: "Outfit", sans-serif;
-  font-size: 1rem;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .topbar-actions {
@@ -965,7 +961,7 @@ html[data-theme="dark"] .feature-badge {
     width: min(var(--max-width), calc(100% - 40px));
   }
 
-  .topbar-shell,
+
   .footer-shell,
   .closing-card {
     flex-direction: column;
