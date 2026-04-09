@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chess Opening Trainer</title>
+    <meta
+      name="description"
+      content="Chess Opening Trainer is a desktop app for drilling chess opening repertoires on macOS and Linux."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@500;600&family=Poppins:wght@500;600&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,500,0,0"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="shell topbar-shell">
+        <a class="brand" href="#top" aria-label="Chess Opening Trainer home">
+          <span class="brand-mark" aria-hidden="true">C</span>
+          <span class="brand-text" data-i18n="brand.name">Chess Opening Trainer</span>
+        </a>
+        <button
+          id="menu-toggle"
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="topbar-actions"
+          aria-label="Open menu"
+        >
+          <span class="theme-toggle-icon menu-toggle-open" aria-hidden="true">menu</span>
+          <span class="theme-toggle-icon menu-toggle-close" aria-hidden="true">close</span>
+        </button>
+        <div id="topbar-actions" class="topbar-actions">
+          <nav class="mini-nav" aria-label="Primary">
+            <a href="#downloads" data-i18n="nav.downloads">Downloads</a>
+            <a href="#features" data-i18n="nav.features">Features</a>
+            <a href="#install" data-i18n="nav.installation">Installation</a>
+            <a href="#faq" data-i18n="nav.faq">FAQ</a>
+          </nav>
+          <div class="topbar-utility">
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+              <span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">light_mode</span>
+              <span class="theme-toggle-icon theme-toggle-moon" aria-hidden="true">dark_mode</span>
+            </button>
+            <label class="language-switcher">
+              <span class="visually-hidden" data-i18n="language.label">Language</span>
+              <select id="language-select" aria-label="Language">
+                <option value="en">EN</option>
+                <option value="es">ES</option>
+                <option value="it">IT</option>
+                <option value="fr">FR</option>
+              </select>
+            </label>
+          </div>
+          <a id="topbar-releases-link" class="button button-secondary button-pill" href="#" target="_blank" rel="noreferrer">
+            <span data-i18n="hero.secondaryCta">View All Releases</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero-section">
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow" data-i18n="hero.eyebrow">Desktop opening training for serious study</p>
+            <h1 data-i18n="hero.title">Train your repertoire until the moves feel automatic.</h1>
+            <p class="lead" data-i18n="hero.description">
+              Chess Opening Trainer helps you rehearse opening lines, test move recall, and build confidence in the
+              positions you actually want to play.
+            </p>
+            <p class="supporting" data-i18n="hero.supporting">
+              Use imported opening data, structured review, and focused drilling sessions to memorize lines without
+              turning study into busywork.
+            </p>
+            <div class="hero-actions">
+              <a id="download-latest-link" class="button button-primary" href="#" target="_blank" rel="noreferrer">
+                <span data-i18n="hero.primaryCta">Download Latest Version</span>
+              </a>
+              <a id="view-releases-link" class="button button-secondary" href="#" target="_blank" rel="noreferrer">
+                <span data-i18n="hero.secondaryCta">View All Releases</span>
+              </a>
+            </div>
+            <div class="hero-meta">
+              <div class="meta-card">
+                <span class="meta-label" data-i18n="hero.metaVersion">Current release</span>
+                <strong id="latest-version">v0.1.0</strong>
+              </div>
+              <div class="meta-card">
+                <span class="meta-label" data-i18n="hero.metaPlatforms">Platforms</span>
+                <strong data-i18n="hero.metaPlatformsValue">macOS, Linux (.deb), Linux (.AppImage)</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-showcase">
+            <article class="hero-card">
+              <div class="hero-card-header">
+                <span class="showcase-chip">Desktop</span>
+                <span class="showcase-chip showcase-chip-soft" data-i18n="hero.panelLabel">Training snapshot</span>
+              </div>
+              <div class="hero-media">
+                <div class="hero-photo" aria-hidden="true"></div>
+              </div>
+              <div class="hero-card-copy">
+                <p class="showcase-caption" data-i18n="hero.panelCopy">
+                  Drill the critical branch, review mistakes, and return to the line until recall becomes reliable.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-downloads" id="downloads">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="downloads.eyebrow">Downloads</p>
+            <h2 data-i18n="downloads.title">Get the current release</h2>
+            <p class="section-description" data-i18n="downloads.description">
+              Downloads are hosted on GitHub Releases. Use the direct platform links below or open the full release
+              history.
+            </p>
+          </div>
+          <div class="download-grid">
+            <article class="download-card download-card-blue">
+              <div class="download-card-top">
+                <span class="platform-pill">macOS</span>
+                <span class="platform-code">.dmg</span>
+              </div>
+              <h3>macOS</h3>
+              <p data-i18n="downloads.macosDescription">Manual GitHub downloads for now, until signing and notarization are added.</p>
+              <a id="download-macos-link" class="button button-dark" href="#" target="_blank" rel="noreferrer">
+                <span data-i18n="downloads.macosButton">Download macOS (.dmg)</span>
+              </a>
+            </article>
+            <article class="download-card download-card-pink">
+              <div class="download-card-top">
+                <span class="platform-pill">Linux</span>
+                <span class="platform-code">.deb</span>
+              </div>
+              <h3>Linux .deb</h3>
+              <p data-i18n="downloads.linuxDebDescription">Best fit for Debian-based systems. Supports in-app updates.</p>
+              <a id="download-linux-deb-link" class="button button-dark" href="#" target="_blank" rel="noreferrer">
+                <span data-i18n="downloads.linuxDebButton">Download Linux (.deb)</span>
+              </a>
+            </article>
+            <article class="download-card download-card-orange">
+              <div class="download-card-top">
+                <span class="platform-pill">Linux</span>
+                <span class="platform-code">.AppImage</span>
+              </div>
+              <h3>Linux .AppImage</h3>
+              <p data-i18n="downloads.linuxAppImageDescription">Portable option for Linux systems that prefer a single executable file.</p>
+              <a id="download-linux-appimage-link" class="button button-dark" href="#" target="_blank" rel="noreferrer">
+                <span data-i18n="downloads.linuxAppImageButton">Download Linux (.AppImage)</span>
+              </a>
+            </article>
+            <article class="download-card download-card-neutral">
+              <div class="download-card-top">
+                <span class="platform-pill">Windows</span>
+                <span class="platform-code">Later</span>
+              </div>
+              <h3>Windows</h3>
+              <p data-i18n="downloads.windowsDescription">Windows support is planned, but there is no public build yet.</p>
+              <span class="coming-soon" data-i18n="downloads.windowsBadge">Coming later</span>
+            </article>
+          </div>
+          <p class="section-note" data-i18n="downloads.note">
+            If you want older builds or release notes, the full GitHub Releases page is always available.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-what" id="about">
+        <div class="shell split-layout">
+          <div class="split-intro">
+            <p class="eyebrow" data-i18n="what.eyebrow">What it does</p>
+            <h2 data-i18n="what.title">A study tool built around repetition, recall, and real repertoire work</h2>
+          </div>
+          <div class="split-copy">
+            <p class="section-copy" data-i18n="what.paragraph1">
+              Chess Opening Trainer is a desktop app for drilling chess opening repertoires in a focused, practical
+              way. Instead of passively reading moves, you actively recall them and reinforce the lines you want to
+              keep ready for real games.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-features" id="features">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="features.eyebrow">Features</p>
+            <h2 data-i18n="features.title">Built for players who want structured opening practice</h2>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <span class="feature-badge">01</span>
+              <h3 data-i18n="features.drillTitle">Interactive drilling</h3>
+              <p data-i18n="what.paragraph2">
+                You can import opening data, organize your material into multiple libraries, and run training sessions
+                that guide you through variations one decision at a time.
+              </p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-badge">02</span>
+              <h3 data-i18n="features.libraryTitle">Multiple opening libraries</h3>
+              <p data-i18n="features.libraryText">
+                Keep separate repertoires, test collections, or study sets without forcing everything into one tree.
+              </p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-badge">03</span>
+              <h3 data-i18n="features.importTitle">PGN import</h3>
+              <p data-i18n="features.importText">
+                Bring in opening data from existing sources so your study material starts from your real repertoire.
+              </p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-badge">04</span>
+              <h3 data-i18n="features.preferencesTitle">Board themes and preferences</h3>
+              <p data-i18n="features.preferencesText">
+                Adjust the training environment with board themes, piece sets, and interface preferences that suit your
+                study habits.
+              </p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-badge">05</span>
+              <h3 data-i18n="features.languageTitle">Multilingual interface</h3>
+              <p data-i18n="features.languageText">
+                The app and this site are designed to support multiple languages for a more comfortable learning
+                experience.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-install" id="install">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="install.eyebrow">Installation</p>
+            <h2 data-i18n="install.title">Install the build that matches your platform</h2>
+          </div>
+          <div class="install-grid">
+            <article class="install-card">
+              <h3>macOS</h3>
+              <ol>
+                <li data-i18n="install.macosStep1">Download the current `.dmg` release build.</li>
+                <li data-i18n="install.macosStep2">Open the disk image and move the app into your Applications folder.</li>
+                <li data-i18n="install.macosStep3">
+                  If macOS warns that the app is from an unidentified developer, open System Settings &gt; Privacy &amp;
+                  Security and choose “Open Anyway”.
+                </li>
+              </ol>
+            </article>
+            <article class="install-card">
+              <h3>Linux .deb</h3>
+              <ol>
+                <li data-i18n="install.debStep1">Download the `.deb` package.</li>
+                <li data-i18n="install.debStep2">Install it with your system package manager or package installer.</li>
+                <li data-i18n="install.debStep3">This package supports in-app updating on Linux.</li>
+              </ol>
+            </article>
+            <article class="install-card">
+              <h3>Linux .AppImage</h3>
+              <ol>
+                <li data-i18n="install.appImageStep1">Download the `.AppImage` file.</li>
+                <li data-i18n="install.appImageStep2">Mark it as executable if your system does not do that automatically.</li>
+                <li data-i18n="install.appImageStep3">
+                  Behavior can differ from the `.deb` package depending on your distribution and desktop setup.
+                </li>
+              </ol>
+            </article>
+            <article class="install-card install-card-muted">
+              <h3>Windows</h3>
+              <p data-i18n="install.windowsText">Windows builds are planned for a later release.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-screenshots" id="screenshots">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="screenshots.eyebrow">Preview</p>
+            <h2 data-i18n="screenshots.title">A closer look at the training experience</h2>
+            <p class="section-description" data-i18n="screenshots.description">
+              A few screens from the app interface, focused on study flow, repertoire review, and training sessions.
+            </p>
+          </div>
+          <div class="screenshot-grid" id="screenshot-grid"></div>
+        </div>
+      </section>
+
+      <section class="section section-faq" id="faq">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="faq.eyebrow">FAQ</p>
+            <h2 data-i18n="faq.title">Practical questions</h2>
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary data-i18n="faq.freeQuestion">Is the app free to use?</summary>
+              <p data-i18n="faq.freeAnswer">
+                The public release process supports free distribution, but you should check the current release notes or
+                project messaging for the most up-to-date licensing and pricing details.
+              </p>
+            </details>
+            <details>
+              <summary data-i18n="faq.updateQuestion">How do I update it?</summary>
+              <p data-i18n="faq.updateAnswer">
+                Linux users can rely on in-app updating when supported by their package. macOS users should download the
+                latest `.dmg` from GitHub Releases until signed updates are available.
+              </p>
+            </details>
+            <details>
+              <summary data-i18n="faq.macosQuestion">Why does macOS warn me before opening it?</summary>
+              <p data-i18n="faq.macosAnswer">
+                Current macOS builds are not yet signed and notarized, so Gatekeeper may show a warning. You can allow
+                the app from Privacy &amp; Security if you trust the download source.
+              </p>
+            </details>
+            <details>
+              <summary data-i18n="faq.linuxQuestion">Which Linux package should I choose: `.deb` or `.AppImage`?</summary>
+              <p data-i18n="faq.linuxAnswer">
+                Choose the `.deb` package on Debian-based systems when you want tighter package-manager integration. Pick
+                `.AppImage` if you prefer a portable single-file build or your setup does not use `.deb`.
+              </p>
+            </details>
+            <details>
+              <summary data-i18n="faq.offlineQuestion">Does it work offline?</summary>
+              <p data-i18n="faq.offlineAnswer">
+                The training workflow is designed for desktop use and core study features can work offline once the app
+                is installed, though update checks obviously require internet access.
+              </p>
+            </details>
+            <details>
+              <summary data-i18n="faq.windowsQuestion">Will Windows support be added?</summary>
+              <p data-i18n="faq.windowsAnswer">
+                Windows support is planned, but there is no public release yet. The website includes a placeholder so it
+                can be added cleanly later.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-closing">
+        <div class="shell closing-card">
+          <div class="closing-copy">
+            <p class="eyebrow">Desktop study</p>
+            <h2 data-i18n="closing.title">The board is set. The next move is yours.</h2>
+          </div>
+          <a id="closing-download-link" class="button button-dark" href="#" target="_blank" rel="noreferrer">
+            <span data-i18n="hero.primaryCta">Download Latest Version</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="shell footer-shell">
+        <p data-i18n="footer.text">Chess Opening Trainer. Public binaries and release notes are distributed through GitHub Releases.</p>
+        <div class="footer-links">
+          <a id="footer-releases-link" href="#" target="_blank" rel="noreferrer" data-i18n="footer.releases">GitHub Releases</a>
+          <a id="footer-support-link" href="#" data-i18n="footer.support">Feedback / Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
