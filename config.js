@@ -1,4 +1,4 @@
-const latestVersion = "1.4.2";
+const latestVersion = "1.5.0";
 const owner = "VantageChess";
 const repo = "ChessOpeningTrainerReleases";
 
